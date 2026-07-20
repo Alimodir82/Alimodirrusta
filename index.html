@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علی مدیرروستا | Alimodirrusta</title>
+    <style>
+        :root {
+            --yellow: #FFDD00;
+            --black: #0F0F0F;
+            --dark: #1A1A1A;
+            --white: #FFFFFF;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Tahoma', Arial, sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.8;
+        }
+        
+        header {
+            background: var(--dark);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--yellow);
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 3px solid var(--yellow);
+            object-fit: cover;
+        }
+        
+        .logo-text {
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('Ali.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.8rem;
+            color: var(--yellow);
+            margin-bottom: 10px;
+        }
+        
+        .hero-content h2 {
+            font-size: 1.8rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .about {
+            padding: 100px 5%;
+            background: var(--dark);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--yellow);
+        }
+        
+        .contact {
+            padding: 100px 5%;
+            background: var(--black);
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--yellow);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-card {
+            background: #1F1F1F;
+            padding: 25px 35px;
+            border-radius: 15px;
+            width: 280px;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow);
+        }
+        
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .contact-card a:hover {
+            color: var(--yellow);
+        }
+        
+        footer {
+            background: #0A0A0A;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            background: var(--yellow);
+            color: black;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav">
+            <a href="#" class="logo">
+                <img src="Ali.jpg" alt="علی مدیرروستا">
+                <div class="logo-text">علی <span>مدیرروستا</span></div>
+            </a>
+            <nav>
+                <a href="#about">درباره من</a>
+                <a href="#contact">ارتباط با من</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>علی مدیرروستا</h1>
+            <h2>هوش مصنوعی | تکنولوژی</h2>
+            <p style="font-size:1.3rem; max-width:700px; margin:0 auto 30px;">
+                تولیدکننده محتوای تخصصی در حوزه هوش مصنوعی و تکنولوژی
+            </p>
+            <a href="#contact" class="btn">همکاری و تبلیغات</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-grid">
+            <div>
+                <img src="Ali.jpg" alt="علی مدیرروستا" style="width:100%; border-radius:20px; border:4px solid var(--yellow);">
+            </div>
+            <div class="about-text">
+                <h2>درباره من</h2>
+                <p>رسانه‌ای در حوزه تکنولوژی، هوش مصنوعی، ابزارها و آموزش برای علاقه‌مندان به دنیای دیجیتال.</p>
+                <br>
+                <p>هدف من ارائه محتوای باکیفیت و کاربردی به مخاطبان تکنولوژی است.</p>
+                <br>
+                <p><strong>تعامل بالا • محتوای تخصصی • تحویل سریع</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>ارتباط با من</h2>
+        
+        <div class="contact-info">
+            <!-- Instagram -->
+            <div class="contact-card">
+                <h3>اینستاگرام</h3>
+                <a href="https://www.instagram.com/alimodirrusta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                    @alimodirrusta
+                </a>
+            </div>
+            
+            <!-- Telegram -->
+            <div class="contact-card">
+                <h3>تلگرام</h3>
+                <a href="https://t.me/alimodir8" target="_blank">
+                    @alimodir8
+                </a>
+            </div>
+            
+            <!-- Phone -->
+            <div class="contact-card">
+                <h3>تماس مستقیم</h3>
+                <a href="tel:09369603820">۰۹۳۶۹۶۰۳۸۲۰</a>
+            </div>
+        </div>
+        
+        <p style="margin-top:50px; font-size:1.1rem;">
+            جهت همکاری و تبلیغات به لینک بالا مراجعه کنید
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; ۱۴۰۴ - علی مدیرروستا | Alimodirrusta</p>
+        <p>تکنولوژی • هوش مصنوعی • آینده</p>
+    </footer>
+
+</body>
+</html>
