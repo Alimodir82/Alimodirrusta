@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>علی مدیرروستا | Alimodirrusta</title>
+    <title>Alimodirrusta | علی مدیرروستا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            --yellow: #FFDD00;
-            --black: #0F0F0F;
-            --dark: #1A1A1A;
-            --white: #FFFFFF;
+            --yellow: #FFEA00;
+            --black: #0A0A0A;
+            --gray: #1F1F1F;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,130 +17,174 @@
         body {
             font-family: 'Tahoma', Arial, sans-serif;
             background-color: var(--black);
-            color: var(--white);
-            line-height: 1.8;
+            color: white;
+            line-height: 1.7;
         }
         
         header {
-            background: var(--dark);
-            padding: 1rem 5%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
-            top: 0;
             z-index: 1000;
-            border-bottom: 4px solid var(--yellow);
+            padding: 1.2rem 5%;
+            border-bottom: 3px solid var(--yellow);
         }
         
         .nav {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             text-decoration: none;
             color: white;
         }
         
         .logo img {
-            width: 55px;
-            height: 55px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
-            border: 3px solid var(--yellow);
+            border: 4px solid var(--yellow);
             object-fit: cover;
         }
         
         .logo-text {
-            font-size: 1.7rem;
-            font-weight: bold;
+            font-size: 1.85rem;
+            font-weight: 800;
+        }
+        
+        .logo-text span {
+            color: var(--yellow);
         }
         
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('Ali.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(20,20,20,0.85)), url('Ali.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-top: 70px;
+            position: relative;
         }
         
-        .hero-content h1 {
-            font-size: 3.8rem;
-            color: var(--yellow);
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4.2rem;
             margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--yellow), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        .hero-content h2 {
-            font-size: 1.8rem;
-            color: #ccc;
-            margin-bottom: 20px;
+        .hero .subtitle {
+            font-size: 1.6rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background: var(--yellow);
+            color: black;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(255, 234, 0, 0.5);
+        }
+        
+        section {
+            padding: 110px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
         
         .about {
-            padding: 100px 5%;
-            background: var(--dark);
-            max-width: 1200px;
-            margin: 0 auto;
+            background: var(--gray);
         }
         
-        .about-grid {
+        .about h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--yellow);
+        }
+        
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 70px;
             align-items: center;
         }
         
-        .about-text h2 {
-            font-size: 2.5rem;
+        .about-text p {
+            font-size: 1.25rem;
             margin-bottom: 25px;
-            color: var(--yellow);
         }
         
         .contact {
-            padding: 100px 5%;
             background: var(--black);
-            text-align: center;
         }
         
         .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
             color: var(--yellow);
         }
         
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
         }
         
         .contact-card {
-            background: #1F1F1F;
-            padding: 25px 35px;
-            border-radius: 15px;
-            width: 280px;
-            transition: 0.3s;
+            background: var(--gray);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s;
             border: 2px solid transparent;
         }
         
         .contact-card:hover {
-            transform: translateY(-10px);
             border-color: var(--yellow);
+            transform: translateY(-15px);
+        }
+        
+        .contact-card i {
+            font-size: 2.8rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            margin: 15px 0;
+            font-size: 1.4rem;
         }
         
         .contact-card a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
         .contact-card a:hover {
@@ -148,21 +192,10 @@
         }
         
         footer {
-            background: #0A0A0A;
-            padding: 40px 5%;
+            background: #050505;
+            padding: 50px 5%;
             text-align: center;
-            font-size: 0.9rem;
-        }
-        
-        .btn {
-            background: var(--yellow);
-            color: black;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -172,41 +205,35 @@
     <header>
         <div class="nav">
             <a href="#" class="logo">
-                <img src="Ali.jpg" alt="علی مدیرروستا">
-                <div class="logo-text">علی <span>مدیرروستا</span></div>
+                <img src="Ali.jpg" alt="Ali Modirrusta">
+                <div class="logo-text">Alimodirrusta <span style="color:#FFEA00;">•</span></div>
             </a>
-            <nav>
-                <a href="#about">درباره من</a>
-                <a href="#contact">ارتباط با من</a>
-            </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>علی مدیرروستا</h1>
-            <h2>هوش مصنوعی | تکنولوژی</h2>
-            <p style="font-size:1.3rem; max-width:700px; margin:0 auto 30px;">
-                تولیدکننده محتوای تخصصی در حوزه هوش مصنوعی و تکنولوژی
+            <h1>ALIMODIRRUSTA</h1>
+            <p class="subtitle">Tech • Artificial Intelligence • Future</p>
+            <p style="font-size:1.4rem; max-width:700px; margin:0 auto 40px;">
+                تولیدکننده محتوا در حوزه هوش مصنوعی و تکنولوژی
             </p>
             <a href="#contact" class="btn">همکاری و تبلیغات</a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="about">
-        <div class="about-grid">
+        <h2>درباره من</h2>
+        <div class="about-content">
             <div>
-                <img src="Ali.jpg" alt="علی مدیرروستا" style="width:100%; border-radius:20px; border:4px solid var(--yellow);">
+                <img src="Ali.jpg" alt="علی مدیرروستا" style="width:100%; border-radius:20px; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
             </div>
             <div class="about-text">
-                <h2>درباره من</h2>
-                <p>رسانه‌ای در حوزه تکنولوژی، هوش مصنوعی، ابزارها و آموزش برای علاقه‌مندان به دنیای دیجیتال.</p>
-                <br>
-                <p>هدف من ارائه محتوای باکیفیت و کاربردی به مخاطبان تکنولوژی است.</p>
-                <br>
-                <p><strong>تعامل بالا • محتوای تخصصی • تحویل سریع</strong></p>
+                <p>رسانه‌ای تخصصی در حوزه تکنولوژی، هوش مصنوعی، ابزارها و آموزش‌های کاربردی برای علاقه‌مندان به دنیای دیجیتال.</p>
+                <p>هدفم تولید محتوای باکیفیت، به‌روز و کاربردی است تا شما همیشه یک قدم جلوتر باشید.</p>
+                <p><strong>مخاطب هدف:</strong> علاقه‌مندان به تکنولوژی و هوش مصنوعی</p>
             </div>
         </div>
     </section>
@@ -214,38 +241,34 @@
     <!-- Contact -->
     <section id="contact" class="contact">
         <h2>ارتباط با من</h2>
-        
-        <div class="contact-info">
+        <div class="contact-grid">
+            
             <!-- Instagram -->
             <div class="contact-card">
+                <i class="fab fa-instagram"></i>
                 <h3>اینستاگرام</h3>
-                <a href="https://www.instagram.com/alimodirrusta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                    @alimodirrusta
-                </a>
+                <a href="https://www.instagram.com/alimodirrusta" target="_blank">@alimodirrusta</a>
             </div>
             
             <!-- Telegram -->
             <div class="contact-card">
+                <i class="fab fa-telegram-plane"></i>
                 <h3>تلگرام</h3>
-                <a href="https://t.me/alimodir8" target="_blank">
-                    @alimodir8
-                </a>
+                <a href="https://t.me/alimodir8" target="_blank">@alimodir8</a>
             </div>
             
             <!-- Phone -->
             <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
                 <h3>تماس مستقیم</h3>
                 <a href="tel:09369603820">۰۹۳۶۹۶۰۳۸۲۰</a>
             </div>
+            
         </div>
-        
-        <p style="margin-top:50px; font-size:1.1rem;">
-            جهت همکاری و تبلیغات به لینک بالا مراجعه کنید
-        </p>
     </section>
 
     <footer>
-        <p>&copy; ۱۴۰۴ - علی مدیرروستا | Alimodirrusta</p>
+        <p>&copy; 2026 Alimodirrusta • علی مدیرروستا</p>
         <p>تکنولوژی • هوش مصنوعی • آینده</p>
     </footer>
 
